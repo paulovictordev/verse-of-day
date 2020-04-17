@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './styles.css';
+
+import { LoadingContextProvider } from './contexts/LoadingContext'
+import { RandomVersesContextProvider } from './contexts/RandomVersesContext'
+
+import HomePage from './components/HomePage'
 
 function App() {
   return (
     <div className="App">
-      <h1>Iniciando</h1>
+      <RandomVersesContextProvider>
+        <LoadingContextProvider>
+          <HomePage />
+        </LoadingContextProvider>
+      </RandomVersesContextProvider>
     </div>
   );
 }
