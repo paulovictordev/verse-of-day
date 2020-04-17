@@ -1,6 +1,8 @@
 import { useState, useCallback } from "react";
+import { API_URL, SETTINGS } from '../api';
 
-const useFetchApi = uri => {
+const useFetchApi = () => {
+
     const [isLoading, setIsLoading] = useState(false);
     const [data, setData] = useState([]);
     const [error, setError] = useState([]);
@@ -9,7 +11,7 @@ const useFetchApi = uri => {
         try {
             setIsLoading(true);
             setError(null);
-            const response = await fetch(uri);
+            const response = await fetch(API_URL, SETTINGS);
             const result = await response.json();
             setData(result);
         } catch (err) {
@@ -17,7 +19,7 @@ const useFetchApi = uri => {
         } finally {
             setIsLoading(false);
         }
-    }, [uri]);
+    }, []);
 
     return { isLoading, data, error, fetchData };
 };

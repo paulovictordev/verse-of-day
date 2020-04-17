@@ -8,12 +8,11 @@ import { useLoadingContext } from '../../contexts/LoadingContext';
 import { useRandomVersesContext } from '../../contexts/RandomVersesContext';
 
 import useFetchApi from '../../hooks/useFetchApi';
-import { RANDOM_VERSES_URL } from '../../api';
 
 const Header = () => {
     const { showLoading, setShowLoading } = useLoadingContext();
     const { setRandomVerses } = useRandomVersesContext();
-    const { isLoading, data, fetchData } = useFetchApi(RANDOM_VERSES_URL);
+    const { isLoading, data, fetchData } = useFetchApi();
 
     useEffect(() => {
         setShowLoading(isLoading);
