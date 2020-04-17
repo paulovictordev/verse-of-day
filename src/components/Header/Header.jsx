@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import "./styles.css";
 
 import Button from '../Button';
-import Loading from '../Loading';
 
 import { useLoadingContext } from '../../contexts/LoadingContext';
 import { useRandomVersesContext } from '../../contexts/RandomVersesContext';
@@ -26,8 +25,7 @@ const Header = () => {
 
     return (
         <header className="wrapper">
-            <h1 className="title">Versículo do Dia</h1>
-            {showLoading && <Loading />}
+            <h1 className="title">Versículo do Dia</h1>    
             <Button
                 onClick={fetchData}
                 disabled={showLoading}>
