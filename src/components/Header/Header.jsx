@@ -29,7 +29,7 @@ const Header = () => {
             <Button
                 onClick={fetchData}
                 disabled={showLoading}>
-                Clique aqui
+                buscar
             </Button>
         </header>
     );
