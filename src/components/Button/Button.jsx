@@ -3,8 +3,6 @@ import "./styles.css";
 
 const Button = ({ disabled, children, onClick }) => {
 
-    console.log("render-botao")
-
     return (
         <button
             className="button"

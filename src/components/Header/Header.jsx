@@ -21,8 +21,6 @@ const Header = () => {
         setRandomVerses(data);
     }, [data, setRandomVerses]);
 
-    console.log("render-header");
-
     return (
         <header className="wrapper">
             <h1 className="title">Versículo do Dia</h1>    

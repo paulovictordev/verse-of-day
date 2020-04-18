@@ -6,8 +6,6 @@ import List from '../List';
 
 const HomePage = () => {
 
-    console.log("render-home")
-
     return (
         <>
             <div className="wrapper">
