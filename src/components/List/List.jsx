@@ -14,7 +14,7 @@ const List = () => {
     const { showLoading } = useLoadingContext();
     const { randomVerses } = useRandomVersesContext();
 
-    const { chapter, number, text } = randomVerses;
+    const { book, chapter, number, text } = randomVerses;
 
     return (
         <ul className="wrapper">
@@ -25,10 +25,11 @@ const List = () => {
             {randomVerses &&
                 (<ListItem>
                     <p>{text}</p>
-                    <p>
-                        <small>{chapter}</small>
-                        <small>{number}</small>
-                    </p>
+                    <div className="item-wrapper-info">
+                        {book && chapter && number &&
+                            (<small>{book} {chapter}:{number}</small>)
+                        }
+                    </div>
                 </ListItem>)}
         </ul>
     );

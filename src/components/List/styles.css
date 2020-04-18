@@ -12,6 +12,18 @@
     text-align: justify;
 }
 
+.item-wrapper-info  {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.item-wrapper-info small{
+    color: #595959;
+    font-style: italic;
+    border-bottom: 1px solid #252526;
+
+}
+
 .loading-container {
     position: absolute;
     left: 0;
