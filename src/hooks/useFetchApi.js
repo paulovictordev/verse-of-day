@@ -7,13 +7,23 @@ const useFetchApi = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState([]);
 
+    const getVerse = obj => {
+        return {
+            book: obj.book.name,
+            chapter: obj.chapter,
+            number: obj.number,
+            text: obj.text
+        }
+    }
+
     const fetchData = useCallback(async () => {
         try {
             setIsLoading(true);
             setError(null);
             const response = await fetch(API_URL, SETTINGS);
             const result = await response.json();
-            setData(result);
+            const verse = getVerse(result);
+            setData(verse);
         } catch (err) {
             setError(err);
         } finally {
