@@ -4,7 +4,7 @@ import "./styles.css";
 const Loading = () => {
     return(
         <div className="wapper">
-            <span className="loading">Loading...</span>
+            <span className="loading">Carregando...</span>
         </div>
     );
 }
